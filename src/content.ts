@@ -1,122 +1,108 @@
 /**
- * The page's content, kept apart from layout so the copy is easy to revise.
- * Voice: plain and human. No jargon, no em dashes. Say it the way you would to
- * a friend who is not technical. "Now" is what we are building; "Next" and
- * "Later" are where we are headed, with no dates.
+ * Roadmap content for heyaurelia, mined and curated from the Aurelia commit
+ * history and the sticky board. Plain, human voice. No em dashes, no jargon.
  */
 
-export interface ChangelogSubItem {
-  label: 'New' | 'Improved' | 'Fixed'
-  text: string
+export interface Item {
+  title: string
+  description: string
+  children?: Item[]
 }
 
-export interface ChangelogEntry {
+export interface ChangeEntry {
   date: string
   title: string
   description: string
-  items?: ChangelogSubItem[]
-  beta?: boolean
 }
 
-export const UPDATED_LABEL = 'Updated June 2026'
-
-export const LEAD = `One assistant that helps with your whole workday. You talk to it like a person, it actually does the work for you, and it never does anything you did not say it could.`
-
-export const STATUS_PARAGRAPH = `Aurelia is one assistant you chat with, and it can really get things done using your tools. Nothing it does happens until you allow it. The heart of it is finished and we use it every day: the chat, a window into what it is thinking, and the controls that decide what it is allowed to do. What we are working on now is giving it more to do, and making it better at the things it already does.`
-
-export const recentlyShipped: ChangelogEntry[] = [
-  {
-    date: 'June 2026',
-    title: 'The chat, and watching it work',
-    description: `The conversation is the whole thing now, and you can watch the assistant work while it works.`,
-    items: [
-      { label: 'New', text: `You can open up its thinking and watch it reason in real time, and that stays saved with the chat.` },
-      { label: 'New', text: `After you approve or turn down something it wants to do, it tells you what actually happened and what comes next.` },
-      { label: 'Improved', text: `The chat only scrolls along when you are reading the latest. When you scroll up to read, it leaves you there and gives you a small button to jump back down.` },
-      { label: 'Improved', text: `When a request is vague, it asks you a quick question instead of guessing.` },
-    ],
-  },
-  {
-    date: 'June 2026',
-    title: 'You decide what it is allowed to do',
-    description: `You set what the assistant can and cannot do, one thing at a time, and it can never give itself more freedom than you gave it.`,
-    items: [
-      { label: 'New', text: `For everything it can do, you pick one of three: never, ask me first, or go ahead. It suggests, and your choice decides.` },
-      { label: 'New', text: `A button that stops everything at once, a full record of every action it took, and limits so it cannot run away with anything.` },
-      { label: 'Improved', text: `Anything risky always asks first. It leans toward checking with you, never toward just doing it.` },
-    ],
-  },
-  {
-    date: 'June 2026',
-    title: 'It remembers, reads your inbox, and connects to your tools',
-    description: `It holds on to what matters and can work with a real inbox, all behind the same controls.`,
-    items: [
-      { label: 'New', text: `It remembers the things that matter about you and your work, and brings them up when they are useful.` },
-      { label: 'New', text: `It can sort your inbox and write replies, but it never sends them. And you can plug in outside tools, each one checked before it runs.` },
-      { label: 'New', text: `A safe little space where it can run code without touching anything it should not.` },
-    ],
-    beta: true,
-  },
-  {
-    date: 'June 2026',
-    title: 'Staying in control, and longer answers',
-    description: `You can steer a task while it runs, and answers no longer get cut off.`,
-    items: [
-      { label: 'New', text: `Line up a follow up while it is working, nudge it in a new direction, or stop it.` },
-      { label: 'Fixed', text: `Long answers no longer get cut short or freeze partway through. The old length limit and the timeout that caused it are gone.` },
-    ],
-  },
+export const finishedItems: Item[] = [
+  { title: "Chat assistant that knows your work", description: "A polished chat where you talk to one smart assistant that reads your inbox, drafts replies, and bases its answers on your real business data.", children: [
+    { title: "Conversational assistant", description: "Sign in, connect Google, and chat with an assistant that reads your inbox and drafts replies for you." },
+    { title: "One assistant, not a crowd of bots", description: "A single smart assistant that quietly uses tools and delegates behind the scenes, instead of a tangle of specialist bots." },
+    { title: "Inbox triage you can act on", description: "A sortable view of your inbox where clicking a message opens the reply drafted for it." },
+    { title: "Your business data on hand", description: "Simple contacts, a product catalog, and a deals pipeline, so answers come from your real information." },
+    { title: "Daily Brief", description: "Ask for your rundown and get a short here-is-your-day summary pulled from your inbox and activity." },
+  ] },
+  { title: "A chat that feels alive", description: "Replies stream in word by word, you can see the assistant think, and you can talk to it however you like.", children: [
+    { title: "Live token streaming and Stop", description: "Replies appear as they are written, and you can hit Stop mid-run to end early." },
+    { title: "See it think", description: "Its real reasoning streams into a block you can open and read, and you can see how long it spent thinking." },
+    { title: "Voice and images", description: "Speak your request and hear natural spoken replies, or attach photos the assistant can actually see and zoom into." },
+    { title: "Saved chats and details", description: "Conversations are saved with auto-generated titles, plus copy, retry, search, and transcript export." },
+    { title: "Instant sync across devices", description: "Open the same conversation on another device and watch it update live with no refresh." },
+  ] },
+  { title: "Permissions and safety", description: "Aurelia asks before it acts by default, and you decide how much freedom to give it, all the way up to acting on its own.", children: [
+    { title: "You set the permissions", description: "A full ask, allow, or run-everything ladder you control per tool, with a visible record of what it is allowed to do." },
+    { title: "Approve before it acts", description: "By default, any action with a real effect pops an approval card in the chat, and after you decide it confirms what actually happened." },
+    { title: "Run-everything mode", description: "Give it full freedom and it acts on its own, with only Deny or the kill switch to stop it." },
+    { title: "Honest about its work", description: "Plain summaries of what each step did, and it will not invent an outcome it did not actually produce." },
+  ] },
+  { title: "Memory that sticks", description: "Tell it to remember something and it keeps the fact, recalls it in later chats, and captures important details on its own." },
+  { title: "Queue and steer mid-task", description: "Type follow-ups while it is working and they queue, sync across your devices, and fold into the task in flight, or you can interrupt outright." },
+  { title: "Bring your own model", description: "Pick Haiku, Sonnet, or Opus per conversation, or point Aurelia at an OpenAI-compatible or local model from a smart picker." },
+  { title: "Crunch your data and connect tools", description: "Attach a spreadsheet and get answers from real computed tables, run code in a safe sandbox, and connect outside tools through a safety gate." },
+  { title: "Make it yours", description: "A short first-run interview personalizes the assistant by name, you can build your own assistant from a description, and you can ground it in knowledge files you attach." },
 ]
 
-export interface NowItem {
-  title: string
-  description: string
-  inProgress?: boolean
-}
-
-export const nowItems: NowItem[] = [
-  { title: `Run it on your own computer`, description: `So you have Aurelia on your own machine, working with whatever AI you want, and you stay in control of what it costs.`, inProgress: true },
-  { title: `Help with code and files`, description: `It can read your code and files now. Soon it will be able to make changes too, always checking with you first.`, inProgress: true },
-  { title: `Make and edit images`, description: `Create and tweak images right inside the chat.`, inProgress: true },
-  { title: `Connect a real email inbox`, description: `Hook up your actual Gmail so it can sort and draft for you. It still never sends without you.`, inProgress: true },
-  { title: `Write your social posts`, description: `Captions, hashtags, and cover images for the things you post.`, inProgress: true },
-  { title: `Remember more of your story`, description: `Moving past single facts toward remembering the whole thread of your conversations, with a place to see and tidy what it knows.`, inProgress: true },
+export const inProgressItems: Item[] = [
+  { title: "Real Gmail, going live", description: "The real Gmail read-and-send path is built and tested, waiting only on the final credential switch to turn it on for live inboxes." },
+  { title: "Content and images", description: "Tools for making content, with the image side still finding its footing.", children: [
+    { title: "Studio content tools", description: "Generate captions, hashtags, and branded cover cards for your posts." },
+    { title: "Image generation", description: "Image creation that can use different providers, with a no-cost demo mode and a smooth loading animation, while the real thing waits on the right provider." },
+  ] },
+  { title: "Coding-agent mode", description: "Early groundwork to use Aurelia as a coding helper, read-only for now and on your own machine first, with a safer change-request mode planned later." },
+  { title: "Deeper memory", description: "Work to push memory past single facts toward real continuity from one conversation to the next." },
 ]
 
-export interface RoadmapItem {
-  title: string
-  description: string
-}
-
-export const nextItems: RoadmapItem[] = [
-  { title: `One inbox for everything`, description: `Your email, your DMs, and your comments all in one place to deal with.` },
-  { title: `Do things on a schedule`, description: `Like a morning summary, or following up at the right time without you asking.` },
-  { title: `A daily catch up`, description: `A short rundown each day of what actually needs you.` },
-  { title: `Plan and draft your content`, description: `A calendar for your posts, and it drafts the posts and replies for you.` },
-  { title: `Help with the money side`, description: `Read and sort your finances and pull together simple reports. It never moves any money.` },
-  { title: `A one click installer`, description: `An easy setup so you can put Aurelia on your own computer with no technical fuss.` },
-  { title: `Simple monthly billing`, description: `Pay monthly, see exactly what you are using, no surprises.` },
-  { title: `Reach it on Discord`, description: `Message it on Discord to start, with more places to talk to it after that.` },
+export const nextItems: Item[] = [
+  { title: "Autonomous with judgment", description: "A freedom mode that thinks about each action and asks you when something is above its pay grade, instead of blindly doing everything." },
+  { title: "Safety nets for acting on its own", description: "An undo and take-back layer plus a careful send gate with rate limits and a dry-run mode, so giving it more freedom stays safe." },
+  { title: "Routines and scheduling", description: "Named, scheduled jobs that run on their own, each with its own tools and its own level of freedom, plus a morning digest of your inbox and activity." },
+  { title: "Unified inbox", description: "One queue for email, direct messages, and comments, with short summaries of what is happening across them." },
+  { title: "Cleaner workspace", description: "A reworked sidebar with quick search and grouped recents, and a refresh of the weaker pages based on real usability research." },
 ]
 
-export const laterItems: RoadmapItem[] = [
-  { title: `Every place people message you`, description: `Texts, WhatsApp, and the rest, all handled in one place. Plus an app for your phone.` },
-  { title: `It runs your day`, description: `Quietly taking care of the routine work on its own, always inside the rules you set.` },
-  { title: `Real research, done for you`, description: `Ask it to look into something online and bring back what matters, with the sources it used.` },
-  { title: `Photo and video editing`, description: `Editing your images and video, cutting long videos into short clips, and turning audio into text.` },
-  { title: `Bring your own AI`, description: `Connect your own AI account, or run one right on your computer, whatever you prefer.` },
-  { title: `Smart pricing help`, description: `Real guidance on what to charge for the things you sell.` },
-  { title: `Build your own helpers`, description: `Create and train your own assistants for specific jobs, with no code needed.` },
+export const plannedItems: Item[] = [
+  { title: "Aurelia everywhere", description: "Reach Aurelia from your phone and from more than just email.", children: [
+    { title: "iOS app", description: "A native iPhone app that shares the same foundation as the web app." },
+    { title: "Channels beyond email", description: "Expand into text messages, WhatsApp, social messages, and voice, starting with a first chat-app connection." },
+  ] },
+  { title: "Agent profiles, one core with many faces", description: "Give the assistant distinct faces, each with its own personality, knowledge, tools, and level of trust, so a public-facing face and your private one stay separate." },
+  { title: "Run it on your own hardware", description: "Install and self-host Aurelia on your own Mac, with one-click setup and updates so it stays private and local-first." },
+  { title: "Tools and skills you can add", description: "Open it up so the assistant can pick from many tools without slowdown, with a skills marketplace and the ability to spin up new helpers on demand." },
+  { title: "Research that cites its sources", description: "Self-hosted web research so the assistant can dig into a question and back up its answers with sources." },
+  { title: "More work tools", description: "Read-only finance reporting with no money movement, social reply drafting and a post calendar, and connections to stores so it understands your inventory and orders." },
+  { title: "Built for trust and scale", description: "Billing and spending caps, security and compliance hardening, monitoring and reliability, and data sharing that stays off by default and you can take back any time." },
+  { title: "A creative suite inside the app", description: "Built-in creative tools for making content right where you work." },
 ]
 
-export const olderUpdates: { date: string; text: string }[] = [
-  { date: 'June 2026', text: `Your permission choices now follow you from one device to another.` },
-  { date: 'June 2026', text: `Conversations get a title and a short summary on their own, so your history is easy to skim.` },
-  { date: 'June 2026', text: `A cleaner sidebar and message box, so the conversation gets the attention.` },
-  { date: 'June 2026', text: `Your settings stick around after a restart and stay private to you.` },
-  { date: 'June 2026', text: `It only tells you things it can back up with your real data, and says so honestly when it cannot.` },
-  { date: 'Earlier', text: `Talk to it out loud, and send it images.` },
-  { date: 'Earlier', text: `Build your own assistants from ready made templates.` },
-  { date: 'Earlier', text: `It double checks its own answers before it shows them to you.` },
-  { date: 'Earlier', text: `The project was renamed from Monarch to Aurelia.` },
+export const changelogItems: ChangeEntry[] = [
+  { date: "Jun 5", title: "First working build", description: "Sign in, connect Gmail, and chat with an assistant that reads your inbox and drafts replies." },
+  { date: "Jun 5", title: "Connect your Google account", description: "A secure sign-in flow and an encrypted vault for linking your real email." },
+  { date: "Jun 6", title: "Claude-style chat", description: "Saved conversations, a live working indicator, copy and retry, and a personalized greeting." },
+  { date: "Jun 6", title: "Inbox triage you can act on", description: "An interactive view where clicking a message opens the reply drafted for it." },
+  { date: "Jun 6", title: "Instant sync across devices", description: "Open a conversation on another device and watch it update live with no refresh." },
+  { date: "Jun 7", title: "Talk to it out loud", description: "Hands-free voice mode with natural spoken replies you can choose from." },
+  { date: "Jun 7", title: "Attach and discuss images", description: "Add photos in chat that the assistant can actually see and you can zoom into." },
+  { date: "Jun 8", title: "It remembers what matters", description: "Tell it to remember something and it recalls the fact in later chats." },
+  { date: "Jun 7", title: "Build your own assistant", description: "Describe an assistant in plain words and get a configured one you can name and edit." },
+  { date: "Jun 8", title: "Business data on hand", description: "Contacts, a product catalog, and a deals pipeline to ground answers in real information." },
+  { date: "Jun 9", title: "The one-assistant redesign", description: "Collapsed a tangle of bots into a single smart assistant that uses tools behind the scenes." },
+  { date: "Jun 9", title: "Approve before it acts", description: "Actions with a real effect pop an approval card in the chat so nothing happens without your okay." },
+  { date: "Jun 9", title: "Stop button and live streaming", description: "Replies stream in word by word and you can hit Stop mid-run." },
+  { date: "Jun 10", title: "Pick your model", description: "Choose Haiku, Sonnet, or Opus per conversation, search past chats, and export a transcript." },
+  { date: "Jun 11", title: "Mission Control workspace", description: "A windowed space to arrange live task and inbox windows and approve work in place." },
+  { date: "Jun 11", title: "Crunch your numbers", description: "Upload a spreadsheet and get answers from real computed tables in a safe code sandbox." },
+  { date: "Jun 11", title: "Connect outside tools", description: "Connect outside tools through a safety gate, with an allow-list for each account." },
+  { date: "Jun 12", title: "Friendly onboarding", description: "A short, skippable first-login interview that personalizes the assistant to you by name." },
+  { date: "Jun 11", title: "Knowledge files", description: "Attach a document, approve it, and the assistant grounds its answers in it." },
+  { date: "Jun 13", title: "See it think", description: "Watch its real reasoning stream in live, with a clear note of how long it spent thinking." },
+  { date: "Jun 19", title: "Renamed to Aurelia", description: "The product was rebranded from Monarch to Aurelia with a new star mark." },
+  { date: "Jun 20", title: "You set the permissions", description: "A full ask, allow, or run-everything ladder you control, with a visible trust record." },
+  { date: "Jun 21", title: "Queue and steer mid-task", description: "Type follow-ups while it works and they queue, sync across devices, and fold into the task." },
+  { date: "Jun 22", title: "Bring your own model", description: "Point Aurelia at OpenAI-compatible or local models, not just Claude." },
+  { date: "Jun 23", title: "Studio content tools", description: "Generate captions, hashtags, and cover cards, with a scheduler that queues posts for approval." },
+  { date: "Jun 21", title: "Ask better questions", description: "When a request is unclear, it asks multiple-choice questions instead of guessing." },
+  { date: "Jun 23", title: "No-spend demo image mode", description: "Approval forwards generated images into the chat, plus a demo image mode that costs nothing." },
+  { date: "Jun 24", title: "Live thinking streams in", description: "The model's real reasoning streams into a clickable thinking block and stays with each turn." },
+  { date: "Jun 24", title: "Long replies no longer cut off", description: "Fixed timeouts and a hard length cap that were chopping long replies short." },
 ]
