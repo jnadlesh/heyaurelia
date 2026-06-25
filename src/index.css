@@ -1,0 +1,154 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'Geist Mono Variable', ui-monospace, 'SFMono-Regular', monospace;
+    --font-heading: var(--font-sans);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --radius-sm: calc(var(--radius) - 2px);
+    --radius-md: calc(var(--radius) - 1px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 2px);
+}
+
+/*
+  Light is defined for completeness, but the app forces dark (see main.tsx /
+  index.html). The researched brief is a refined, true-neutral near-black.
+*/
+:root {
+    --radius: 0.5rem;
+
+    --background: #ffffff;
+    --foreground: #18181b;
+    --card: #ffffff;
+    --card-foreground: #18181b;
+    --popover: #ffffff;
+    --popover-foreground: #18181b;
+    --primary: #b8801f;
+    --primary-foreground: #ffffff;
+    --secondary: #f4f4f5;
+    --secondary-foreground: #18181b;
+    --muted: #f4f4f5;
+    --muted-foreground: #71717a;
+    --accent: #f4f4f5;
+    --accent-foreground: #18181b;
+    --destructive: #dc2626;
+    --border: rgba(0, 0, 0, 0.1);
+    --input: rgba(0, 0, 0, 0.12);
+    --ring: #b8801f;
+}
+
+.dark {
+    /* Refined, true-neutral near-black. No purple/blue tint. */
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --card: #0c0c0c;
+    --card-foreground: #ededed;
+    --popover: #131313;
+    --popover-foreground: #ededed;
+
+    /* The single accent: warm gold. Links, the footer action, the status dot. */
+    --primary: #e0a23b;
+    --primary-foreground: #0a0a0a;
+
+    --secondary: #161616;
+    --secondary-foreground: #ededed;
+    --muted: #141414;
+    --muted-foreground: #8a8a8a;
+    --accent: #161616;
+    --accent-foreground: #ededed;
+    --destructive: #ef4444;
+
+    /* 1px hairlines, white ~8%. */
+    --border: rgba(255, 255, 255, 0.08);
+    --input: rgba(255, 255, 255, 0.1);
+    --ring: rgba(224, 162, 59, 0.4);
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+
+    html {
+        @apply font-sans;
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+        font-synthesis-weight: none;
+    }
+
+    /* Links use the one accent. */
+    a {
+        color: inherit;
+    }
+}
+
+@layer utilities {
+    /* Faint dot-matrix, header only. Very subtle. */
+    .dot-matrix {
+        background-image: radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.05) 1px,
+            transparent 1px
+        );
+        background-size: 16px 16px;
+    }
+
+    /* One quiet fade/slide-in on scroll-into-view. Nothing loops. */
+    .reveal {
+        opacity: 0;
+        transform: translateY(12px);
+        transition:
+            opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+            transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: opacity, transform;
+    }
+
+    .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .reveal {
+            opacity: 1;
+            transform: none;
+            transition: none;
+        }
+
+        html {
+            scroll-behavior: auto;
+        }
+    }
+}
