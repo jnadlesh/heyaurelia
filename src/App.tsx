@@ -135,24 +135,42 @@ function CardModal({
   open: boolean
   onClose: () => void
 }) {
+  useEffect(() => {
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose()
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [open, onClose])
+
   return (
     <div
       className={cn(
-        'fixed inset-0 z-[60] flex items-center justify-center p-4 transition-opacity duration-300',
-        open ? 'opacity-100' : 'pointer-events-none opacity-0',
+        'fixed inset-0 z-[60] flex items-center justify-center p-4',
+        open ? 'pointer-events-auto' : 'pointer-events-none',
       )}
       aria-hidden={!open}
     >
+      {/* Backdrop owns the fade only, matched to the panel timing. */}
       <button
         type="button"
         aria-label="Close"
         onClick={onClose}
-        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
-      />
-      <div
         className={cn(
-          'relative flex max-h-[82vh] w-full max-w-md flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-xl shadow-black/40 transition-[transform,opacity] duration-[450ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none',
-          open ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0',
+          'absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-[450ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none',
+          open ? 'opacity-100' : 'opacity-0',
+        )}
+      />
+      {/* Panel is the single owner of slide + fade; the wrapper never touches opacity.
+          Tailwind v4 emits translate-y-* as the `translate` property, so the transition
+          must animate `translate` (not `transform`) or the rise snaps. */}
+      <div
+        role="dialog"
+        aria-modal="true"
+        className={cn(
+          'relative flex max-h-[82vh] w-full max-w-md flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-xl shadow-black/40 transition-[translate,opacity] duration-[450ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none',
+          open ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0',
         )}
       >
         <div className="flex items-start justify-between gap-4 border-b border-border px-6 py-5">
