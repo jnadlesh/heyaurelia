@@ -20,6 +20,7 @@ export const finishedItems: Item[] = [
     { title: "Conversational assistant", description: "Sign in, connect Google, and chat with an assistant that reads your inbox and drafts replies for you." },
     { title: "One assistant, not a crowd of bots", description: "A single smart assistant that quietly uses tools and delegates behind the scenes, instead of a tangle of specialist bots." },
     { title: "Inbox triage you can act on", description: "A sortable view of your inbox where clicking a message opens the reply drafted for it." },
+    { title: "See and manage your real inbox", description: "Your emails render in full with their real formatting, and you can delete, archive, or mark spam right there, while the assistant only ever gets a read-and-draft view." },
     { title: "Your business data on hand", description: "Simple contacts, a product catalog, and a deals pipeline, so answers come from your real information." },
     { title: "Daily Brief", description: "Ask for your rundown and get a short here-is-your-day summary pulled from your inbox and activity." },
   ] },
@@ -44,7 +45,6 @@ export const finishedItems: Item[] = [
 ]
 
 export const inProgressItems: Item[] = [
-  { title: "Real Gmail, going live", description: "The real Gmail read-and-send path is built and tested, waiting only on the final credential switch to turn it on for live inboxes." },
   { title: "Content and images", description: "Tools for making content, with the image side still finding its footing.", children: [
     { title: "Studio content tools", description: "Generate captions, hashtags, and branded cover cards for your posts." },
     { title: "Image generation", description: "Image creation that can use different providers, with a no-cost demo mode and a smooth loading animation, while the real thing waits on the right provider." },
@@ -105,4 +105,8 @@ export const changelogItems: ChangeEntry[] = [
   { date: "Jun 23", title: "No-spend demo image mode", description: "Approval forwards generated images into the chat, plus a demo image mode that costs nothing." },
   { date: "Jun 24", title: "Live thinking streams in", description: "The model's real reasoning streams into a clickable thinking block and stays with each turn." },
   { date: "Jun 24", title: "Long replies no longer cut off", description: "Fixed timeouts and a hard length cap that were chopping long replies short." },
+  { date: "Jun 24", title: "Interrupt it mid-task", description: "A press-to-interrupt control that stops the assistant mid-run so you can redirect it on the spot." },
+  { date: "Jun 24", title: "Smarter tool picking", description: "The assistant searches its full toolset by what you need, so it reaches for the right tool without slowing down." },
+  { date: "Jun 25", title: "Real Gmail, live", description: "The real Gmail connection is on: it reads and triages your actual inbox and drafts replies you approve." },
+  { date: "Jun 25", title: "See and manage your real emails", description: "Emails render with their real formatting, and you can delete, archive, or mark spam right in the workspace." },
 ]
