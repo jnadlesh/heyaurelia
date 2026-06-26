@@ -45,31 +45,28 @@ export const finishedItems: Item[] = [
 ]
 
 export const inProgressItems: Item[] = [
+  { title: "A video clipper, finishing it first", description: "The thing we are building right now. Hand it one long video and get back a set of short, ready-to-post clips. The first piece is in: it watches the video and suggests where the clips should be. The next step is turning those suggestions into finished clips you can post." },
   { title: "Content and images", description: "Tools for making content, with the image side still finding its footing.", children: [
     { title: "Studio content tools", description: "Generate captions, hashtags, and branded cover cards for your posts." },
     { title: "Image generation", description: "Image creation that can use different providers, with a no-cost demo mode and a smooth loading animation, while the real thing waits on the right provider." },
   ] },
   { title: "Coding-agent mode", description: "Early groundwork to use Aurelia as a coding helper, read-only for now and on your own machine first, with a safer change-request mode planned later." },
-  { title: "Deeper memory", description: "Work to push memory past single facts toward real continuity from one conversation to the next." },
 ]
 
 export const nextItems: Item[] = [
-  { title: "Autonomous with judgment", description: "A freedom mode that thinks about each action and asks you when something is above its pay grade, instead of blindly doing everything." },
-  { title: "Safety nets for acting on its own", description: "An undo and take-back layer plus a careful send gate with rate limits and a dry-run mode, so giving it more freedom stays safe." },
-  { title: "Routines and scheduling", description: "Named, scheduled jobs that run on their own, each with its own tools and its own level of freedom, plus a morning digest of your inbox and activity." },
-  { title: "Unified inbox", description: "One queue for email, direct messages, and comments, with short summaries of what is happening across them." },
+  { title: "Let her act on her own, and only check in on the big stuff", description: "We have decided to flip how she works. Instead of asking you about almost everything, she will handle the everyday things herself and only stop to check with you on the big, risky ones. This is a decision we have made, not something that is built yet." },
+  { title: "Safety nets for acting on its own", description: "An undo and take-back layer plus a careful send gate with rate limits and a dry-run mode, so giving her more freedom stays safe." },
+  { title: "Reach her beyond email", description: "Talk to Aurelia where you already are, on chat apps and more, not just in email. The first chat-app connection comes first, then we widen out from there." },
+  { title: "Routines that run on a schedule", description: "Named jobs that run on their own at the times you pick, each with its own tools and its own level of freedom, plus a morning digest of your inbox and activity." },
   { title: "Cleaner workspace", description: "A reworked sidebar with quick search and grouped recents, and a refresh of the weaker pages based on real usability research." },
 ]
 
 export const plannedItems: Item[] = [
-  { title: "Aurelia everywhere", description: "Reach Aurelia from your phone and from more than just email.", children: [
-    { title: "iOS app", description: "A native iPhone app that shares the same foundation as the web app." },
-    { title: "Channels beyond email", description: "Expand into text messages, WhatsApp, social messages, and voice, starting with a first chat-app connection." },
-  ] },
+  { title: "Web research, and skills you can add", description: "Let Aurelia dig into a question on the web and back up her answers with the sources she used, plus a growing library of skills you can switch on, with the ability to spin up new helpers when you need them." },
+  { title: "Deeper memory of your past conversations", description: "Push memory past single facts toward real continuity, so she remembers the conversations you have had together, not just the facts you told her to keep." },
+  { title: "Aurelia on your phone", description: "A native iPhone app that shares the same foundation as the web app." },
   { title: "Agent profiles, one core with many faces", description: "Give the assistant distinct faces, each with its own personality, knowledge, tools, and level of trust, so a public-facing face and your private one stay separate." },
   { title: "Run it on your own hardware", description: "Install and self-host Aurelia on your own Mac, with one-click setup and updates so it stays private and local-first." },
-  { title: "Tools and skills you can add", description: "Open it up so the assistant can pick from many tools without slowdown, with a skills marketplace and the ability to spin up new helpers on demand." },
-  { title: "Research that cites its sources", description: "Self-hosted web research so the assistant can dig into a question and back up its answers with sources." },
   { title: "More work tools", description: "Read-only finance reporting with no money movement, social reply drafting and a post calendar, and connections to stores so it understands your inventory and orders." },
   { title: "Built for trust and scale", description: "Billing and spending caps, security and compliance hardening, monitoring and reliability, and data sharing that stays off by default and you can take back any time." },
   { title: "A creative suite inside the app", description: "Built-in creative tools for making content right where you work." },
@@ -111,4 +108,8 @@ export const changelogItems: ChangeEntry[] = [
   { date: "Jun 25", title: "See and manage your real emails", description: "Emails render with their real formatting, and you can delete, archive, or mark spam right in the workspace." },
   { date: "Jun 26", title: "A cleaner, faster inbox", description: "The inbox got a full rebuild: sender avatars and tidy rows, emails that open at full size with their images, a delete that slides out as you reach for it, a Select mode for clearing in bulk, and a layout that reflows to a single column on a small window." },
   { date: "Jun 26", title: "Aurelia can act on your inbox now", description: "With your okay on each step, Aurelia can archive, mark spam, move things between folders, and mark read, not just draft replies. The inbox also gained Gmail-style category filters that she pays attention to, so she skips marketing unless you ask, a reply and forward box you can write in, a way to move things out of Junk, and a small command box to tell her what to do when no email is open." },
+  { date: "Jun 26", title: "An inbox that keeps itself fresh", description: "The list quietly refreshes on its own, so new mail and the results of any action show up without you hitting reload." },
+  { date: "Jun 26", title: "First piece of the video clipper", description: "The groundwork for turning one long video into a set of suggested clips you can review. It proposes the clips for now and does not render the finished files yet." },
+  { date: "Jun 26", title: "She knows herself and the app", description: "Aurelia now describes herself and the app accurately. She stopped calling herself just a chat box, and she stopped pointing you to pages and buttons that are not actually there." },
+  { date: "Jun 26", title: "Measured against the best", description: "A big research pass comparing Aurelia to the leading do-it-on-its-own assistant, to see where she stands and what to build next." },
 ]
