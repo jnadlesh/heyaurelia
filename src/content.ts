@@ -20,7 +20,7 @@ export const finishedItems: Item[] = [
     { title: "Conversational assistant", description: "Sign in, connect Google, and chat with an assistant that reads your inbox and drafts replies for you." },
     { title: "One assistant, not a crowd of bots", description: "A single smart assistant that quietly uses tools and delegates behind the scenes, instead of a tangle of specialist bots." },
     { title: "Inbox triage you can act on", description: "A sortable view of your inbox where clicking a message opens the reply drafted for it." },
-    { title: "See and manage your real inbox", description: "Your emails render in full with their real formatting, and you can delete, archive, or mark spam right there, while the assistant only ever gets a read-and-draft view." },
+    { title: "See and manage your real inbox", description: "Your emails render in full with their real formatting, and you can delete, archive, move, or mark spam right there. Aurelia can take those same actions now too, but only by asking you first, and she still only ever reads the plain text of an email." },
     { title: "Your business data on hand", description: "Simple contacts, a product catalog, and a deals pipeline, so answers come from your real information." },
     { title: "Daily Brief", description: "Ask for your rundown and get a short here-is-your-day summary pulled from your inbox and activity." },
   ] },
@@ -110,4 +110,5 @@ export const changelogItems: ChangeEntry[] = [
   { date: "Jun 25", title: "Real Gmail, live", description: "The real Gmail connection is on: it reads and triages your actual inbox and drafts replies you approve." },
   { date: "Jun 25", title: "See and manage your real emails", description: "Emails render with their real formatting, and you can delete, archive, or mark spam right in the workspace." },
   { date: "Jun 26", title: "A cleaner, faster inbox", description: "The inbox got a full rebuild: sender avatars and tidy rows, emails that open at full size with their images, a delete that slides out as you reach for it, a Select mode for clearing in bulk, and a layout that reflows to a single column on a small window." },
+  { date: "Jun 26", title: "Aurelia can act on your inbox now", description: "With your okay on each step, Aurelia can archive, mark spam, move things between folders, and mark read, not just draft replies. The inbox also gained Gmail-style category filters that she pays attention to, so she skips marketing unless you ask, a reply and forward box you can write in, a way to move things out of Junk, and a small command box to tell her what to do when no email is open." },
 ]
