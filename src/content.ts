@@ -109,5 +109,5 @@ export const changelogItems: ChangeEntry[] = [
   { date: "Jun 24", title: "Smarter tool picking", description: "The assistant searches its full toolset by what you need, so it reaches for the right tool without slowing down." },
   { date: "Jun 25", title: "Real Gmail, live", description: "The real Gmail connection is on: it reads and triages your actual inbox and drafts replies you approve." },
   { date: "Jun 25", title: "See and manage your real emails", description: "Emails render with their real formatting, and you can delete, archive, or mark spam right in the workspace." },
-  { date: "Jun 26", title: "A cleaner, faster inbox", description: "The inbox got a full rebuild: emails open at full size with their images, you hover any message to delete it, and a new setting loads remote images automatically with a switch to turn them off." },
+  { date: "Jun 26", title: "A cleaner, faster inbox", description: "The inbox got a full rebuild: sender avatars and tidy rows, emails that open at full size with their images, a delete that slides out as you reach for it, a Select mode for clearing in bulk, and a layout that reflows to a single column on a small window." },
 ]
