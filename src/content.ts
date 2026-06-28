@@ -45,7 +45,7 @@ export const finishedItems: Item[] = [
 ]
 
 export const inProgressItems: Item[] = [
-  { title: "A video clipper, finishing it first", description: "The thing we are building right now. Hand it one long video and get back a set of short, ready-to-post clips. The first piece is in: it watches the video and suggests where the clips should be. The next step is turning those suggestions into finished clips you can post." },
+  { title: "A video clipper, finishing it first", description: "The thing we are building right now. Hand it one long video and get back short, ready-to-post clips. The big piece just landed: it actually cuts the clips now, upright and captioned, and the whole thing runs on your own computer. Next we are building the screen where you pick a video and tell it what you want, and wrapping it all in an app you install so there is nothing to set up by hand." },
   { title: "Content and images", description: "Tools for making content, with the image side still finding its footing.", children: [
     { title: "Studio content tools", description: "Generate captions, hashtags, and branded cover cards for your posts." },
     { title: "Image generation", description: "Image creation that can use different providers, with a no-cost demo mode and a smooth loading animation, while the real thing waits on the right provider." },
@@ -112,4 +112,5 @@ export const changelogItems: ChangeEntry[] = [
   { date: "Jun 26", title: "First piece of the video clipper", description: "The groundwork for turning one long video into a set of suggested clips you can review. It proposes the clips for now and does not render the finished files yet." },
   { date: "Jun 26", title: "She knows herself and the app", description: "Aurelia now describes herself and the app accurately. She stopped calling herself just a chat box, and she stopped pointing you to pages and buttons that are not actually there." },
   { date: "Jun 26", title: "Measured against the best", description: "A big research pass comparing Aurelia to the leading do-it-on-its-own assistant, to see where she stands and what to build next." },
+  { date: "Jun 28", title: "The clipper makes real clips now", description: "It went from only suggesting where the clips should be to actually cutting them: hand it a long video and get back short, upright clips with the captions burned in, ready to post. It all runs on your own computer, nothing in the cloud." },
 ]
