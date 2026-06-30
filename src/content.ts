@@ -42,10 +42,16 @@ export const finishedItems: Item[] = [
   { title: "Bring your own model", description: "Pick Haiku, Sonnet, or Opus per conversation, or point Aurelia at an OpenAI-compatible or local model from a smart picker." },
   { title: "Crunch your data and connect tools", description: "Attach a spreadsheet and get answers from real computed tables, run code in a safe sandbox, and connect outside tools through a safety gate." },
   { title: "Make it yours", description: "A short first-run interview personalizes the assistant by name, you can build your own assistant from a description, and you can ground it in knowledge files you attach." },
+  { title: "Turn a long video into ready-to-post clips", description: "Hand Aurelia a long video, she finds the best moments, and you fine-tune and export them, all on your own computer.", children: [
+    { title: "She finds the best moments", description: "She reads the video and listens to what is said to pick the strongest moments, not just the loudest." },
+    { title: "Watch and fine-tune before you save", description: "Watch a suggested clip where the video plays, nudge the start and end, scrub through it, turn captions on or off, then save and download." },
+    { title: "Real vertical captioned clips, locally", description: "Real upright, captioned clips, made on your own computer." },
+    { title: "Bring any video, and it sticks", description: "Upload a video, pull one from Drive, or use a local file, and your clips stay put if you reload." },
+  ] },
 ]
 
 export const inProgressItems: Item[] = [
-  { title: "A video clipper, finishing it first", description: "The thing we are building right now. Hand it one long video and get back short, ready-to-post clips. The big piece just landed: it actually cuts the clips now, upright and captioned, and the whole thing runs on your own computer. Next we are building the screen where you pick a video and tell it what you want, and wrapping it all in an app you install so there is nothing to set up by hand." },
+  { title: "Finishing the video clipper", description: "The clipper works end to end now. What is left is telling Aurelia in plain words what to change, and wrapping it in an app you install." },
   { title: "Content and images", description: "Tools for making content, with the image side still finding its footing.", children: [
     { title: "Studio content tools", description: "Generate captions, hashtags, and branded cover cards for your posts." },
     { title: "Image generation", description: "Image creation that can use different providers, with a no-cost demo mode and a smooth loading animation, while the real thing waits on the right provider." },
