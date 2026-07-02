@@ -359,7 +359,7 @@ function TitleBlock() {
         </div>
       </div>
       <p className="mt-8 font-mono text-[13px] uppercase tracking-[0.18em] text-muted-foreground">
-        Updated June 2026
+        Updated July 2026
       </p>
     </div>
   )

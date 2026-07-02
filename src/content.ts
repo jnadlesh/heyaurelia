@@ -45,13 +45,21 @@ export const finishedItems: Item[] = [
   { title: "Turn a long video into ready-to-post clips", description: "Hand Aurelia a long video, she finds the best moments, and you fine-tune and export them, all on your own computer.", children: [
     { title: "She finds the best moments", description: "She reads the video and listens to what is said to pick the strongest moments, not just the loudest." },
     { title: "Watch and fine-tune before you save", description: "Watch a suggested clip where the video plays, nudge the start and end, scrub through it, turn captions on or off, then save and download." },
+    { title: "A real editor for your clips", description: "The clip editor grew up. There is a proper timeline with a sound wave you can read, layout and audio controls, and a fullscreen preview that keeps the captions on screen." },
+    { title: "Smart framing that follows the action", description: "It reframes a wide video for upright screens on its own, following faces and the action, splitting out a webcam corner, and trimming captions that were baked into the original." },
     { title: "Real vertical captioned clips, locally", description: "Real upright, captioned clips, made on your own computer." },
     { title: "Bring any video, and it sticks", description: "Upload a video, pull one from Drive, or use a local file, and your clips stay put if you reload." },
+  ] },
+  { title: "A library for everything she makes", description: "Every clip, thumbnail, and file Aurelia makes lands in one place you can browse, sort into your own folders, and open back up.", children: [
+    { title: "Folders you make yourself", description: "Sort your clips and files into folders you name, instead of everything being lumped together by chat. Pick several at once and file them in one go." },
+    { title: "Aurelia can tidy it for you", description: "Ask her to clean up the library and she can make, rename, move, and clear out folders. Every change comes to you as an approval card first, so nothing moves without your okay." },
+    { title: "Clips you can see at a glance", description: "Draft clips show a real preview frame instead of a blank box, and finished thumbnails save for good." },
   ] },
 ]
 
 export const inProgressItems: Item[] = [
-  { title: "Finishing the video clipper", description: "The clipper works end to end now. What is left is telling Aurelia in plain words what to change, and wrapping it in an app you install." },
+  { title: "Finishing the video clipper", description: "The clipper works end to end and the editor is built out with a real timeline, sound wave, framing controls, and captions. What is left is telling Aurelia in plain words what to change, and wrapping it all in an app you install." },
+  { title: "Keeping everything perfectly in sync", description: "Small polish so the chat stays exactly in step when you hop between pages, images you make stay put after a refresh, and there is less waiting before a reply starts." },
   { title: "Content and images", description: "Tools for making content, with the image side still finding its footing.", children: [
     { title: "Studio content tools", description: "Generate captions, hashtags, and branded cover cards for your posts." },
     { title: "Image generation", description: "Image creation that can use different providers, with a no-cost demo mode and a smooth loading animation, while the real thing waits on the right provider." },
@@ -120,4 +128,8 @@ export const changelogItems: ChangeEntry[] = [
   { date: "Jun 26", title: "Measured against the best", description: "A big research pass comparing Aurelia to the leading do-it-on-its-own assistant, to see where she stands and what to build next." },
   { date: "Jun 28", title: "The clipper makes real clips now", description: "It went from only suggesting where the clips should be to actually cutting them: hand it a long video and get back short, upright clips with the captions burned in, ready to post. It all runs on your own computer, nothing in the cloud." },
   { date: "Jun 30", title: "Watch and fine-tune a clip before you save it", description: "The video clip suite is here. Aurelia reads through a long video, listens to what is actually being said, and finds the best moments for you. When she suggests a clip, you can watch it right where the video plays, nudge the start and end until it feels right, scrub through it, and turn the captions on or off. When it looks good, you save the finished clip and download it. You can drop in your own video by uploading it, pull one from Drive, or use a file already on your computer, and your suggested clips stay put even if you reload the page." },
+  { date: "Jul 1", title: "A library for everything she makes, with your own folders", description: "Everything Aurelia makes now lives in one library you can actually organize. The cards are bigger, you can pick several at once and file them together, and you sort things into folders you name yourself instead of everything being grouped by chat. Draft clips show a real preview frame now, not a blank box." },
+  { date: "Jul 1", title: "Ask Aurelia to tidy the library", description: "She can make, rename, move, and clear out folders for you when you ask. Every change comes to you as an approval card first, so nothing in your library moves without your okay." },
+  { date: "Jul 2", title: "The clip editor grew into a real editor", description: "A proper timeline with a sound wave you can read, layout and audio controls, and a fullscreen preview that keeps the captions on screen. It also reframes a wide video for upright screens on its own, following faces and the action, splitting out a webcam corner, and trimming captions that were baked into the original." },
+  { date: "Jul 2", title: "Thumbnails save for good", description: "Cover thumbnails now save straight to disk and land in your library, so they stick around instead of disappearing." },
 ]
