@@ -55,6 +55,11 @@ export const finishedItems: Item[] = [
     { title: "Aurelia can tidy it for you", description: "Ask her to clean up the library and she can make, rename, move, and clear out folders. Every change comes to you as an approval card first, so nothing moves without your okay." },
     { title: "Clips you can see at a glance", description: "Draft clips show a real preview frame instead of a blank box, and finished thumbnails save for good." },
   ] },
+  { title: "Use Aurelia as a coding helper", description: "Point Aurelia at a code project on your own computer and she can read it, explain how it works, make edits, and run commands. Anything that changes your files waits for your okay first, and it all stays on your own machine.", children: [
+    { title: "She reads before she answers", description: "Ask about your code and she opens the actual files and answers from what is really there, instead of guessing." },
+    { title: "Edits you approve", description: "She shows each change as a clear before-and-after, and nothing is written until you say yes." },
+    { title: "Quicker on bigger questions", description: "When a question spans several files she reads them together in one pass instead of one at a time, so you wait less." },
+  ] },
 ]
 
 export const inProgressItems: Item[] = [
@@ -64,7 +69,6 @@ export const inProgressItems: Item[] = [
     { title: "Studio content tools", description: "Generate captions, hashtags, and branded cover cards for your posts." },
     { title: "Image generation", description: "Image creation that can use different providers, with a no-cost demo mode and a smooth loading animation, while the real thing waits on the right provider." },
   ] },
-  { title: "Coding-agent mode", description: "Early groundwork to use Aurelia as a coding helper, read-only for now and on your own machine first, with a safer change-request mode planned later." },
 ]
 
 export const nextItems: Item[] = [
@@ -132,4 +136,6 @@ export const changelogItems: ChangeEntry[] = [
   { date: "Jul 1", title: "Ask Aurelia to tidy the library", description: "She can make, rename, move, and clear out folders for you when you ask. Every change comes to you as an approval card first, so nothing in your library moves without your okay." },
   { date: "Jul 2", title: "The clip editor grew into a real editor", description: "A proper timeline with a sound wave you can read, layout and audio controls, and a fullscreen preview that keeps the captions on screen. It also reframes a wide video for upright screens on its own, following faces and the action, splitting out a webcam corner, and trimming captions that were baked into the original." },
   { date: "Jul 2", title: "Thumbnails save for good", description: "Cover thumbnails now save straight to disk and land in your library, so they stick around instead of disappearing." },
+  { date: "Jul 2", title: "Aurelia can help with code now", description: "Point her at a project on your computer and she can read it, explain how it works, edit files, and run commands, with your okay on anything that makes a change. It all stays on your own machine." },
+  { date: "Jul 3", title: "Faster on bigger code questions", description: "When a question covers several files she now reads them together in one pass instead of one at a time, so you wait less. She also always knows exactly which project folder she is looking at, and double-checks with her own tools rather than second-guessing herself if you push back." },
 ]
