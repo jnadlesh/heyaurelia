@@ -1,35 +1,20 @@
-# Aurelia Roadmap
+# heyaurelia.com
 
-The public status and roadmap page for Aurelia, an AI agent that grows with you.
+The public site for Aurelia: one page that says what Aurelia is and how to get it.
 
 Live at **[heyaurelia.com](https://heyaurelia.com)**.
 
-## What this is
+## How it is made
 
-A single page that shows what Aurelia can do today, what is being built, and
-where it is going. On desktop it reads as a sideways timeline you scroll
-through; on mobile it stacks into a vertical one. A full changelog of everything
-shipped lives at the end.
+The page is built in the Aurelia-Landing project, which also holds its design notes (`docs/landing-brief.md`).
+`npm run build:site` there writes the finished site to `dist/site`. This repository only holds that output, in
+`site/`. Pushing to `main` uploads `site/` to GitHub Pages as it is.
 
-## Stack
+To change the site, change it in Aurelia-Landing, build it, replace `site/` here with `dist/site`, commit and push.
 
-- Vite, React 19, TypeScript
-- Tailwind CSS v4
-- Deployed to GitHub Pages
-
-## Develop
-
-```bash
-pnpm install
-pnpm dev        # local dev server
-pnpm build      # production build to dist/
-pnpm preview    # preview the production build
-```
-
-Roadmap copy lives in `src/content.ts`. Pushing to `main` builds and deploys to
-GitHub Pages automatically.
+The status and roadmap page that lived here until 23 September 2026 is in the history, at commit `6487151`.
 
 ## License
 
-Proprietary. All rights reserved. See [LICENSE](./LICENSE). No permission is
-granted to use, copy, or modify this software.
+Proprietary. All rights reserved. See [LICENSE](./LICENSE). No permission is granted to use, copy, or modify
+this software.

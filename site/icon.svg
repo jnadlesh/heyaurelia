@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <title>Aurelia</title>
+  <defs>
+    <linearGradient id="face" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#181b21"/>
+      <stop offset="1" stop-color="#0c0c0d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" rx="230" fill="url(#face)"/>
+  <g fill="#eef0f4" transform="translate(193.9 198.4) scale(1.2406)">
+    <path d="M256 40 L486.940108 440 L170.55216 440 L222.513684 350 L331.055535 350 L256 220 L241.854918 244.5 L137.93187 244.5 Z"/>
+    <path d="M117.14726 280.5 L221.070309 280.5 L128.982941 440 L25.059892 440 Z"/>
+  </g>
+</svg>
